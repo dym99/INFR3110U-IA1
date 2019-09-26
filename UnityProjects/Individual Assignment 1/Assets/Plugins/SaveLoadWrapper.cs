@@ -19,7 +19,7 @@ public class SaveLoadWrapper
         bool ok = save(path, filename, position.x, position.y, position.z);
         if (!ok)
         {
-            Console.WriteLine("[SaveLoadWrapper] Failed to save file!");
+            //Console.WriteLine("[SaveLoadWrapper] Failed to save file!");
         }
     }
 
@@ -29,7 +29,7 @@ public class SaveLoadWrapper
         bool ok = load(path, filename, ref temp.x, ref temp.y, ref temp.z);
         if (!ok)
         {
-            Console.WriteLine("[SaveLoadWrapper] Unable to open save file!");
+            //Console.WriteLine("[SaveLoadWrapper] Unable to open save file!");
         }
         return temp;
     }

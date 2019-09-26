@@ -35,10 +35,12 @@ extern "C" {
 			//File failed to open
 			err = 1;
 			return false;
-		}	
-		fprintf(file, "%f,%f,%f", x, y, z);
-		fclose(file);
-		return true;
+		}
+		else {
+			fprintf(file, "%f,%f,%f", x, y, z);
+			fclose(file);
+			return true;
+		}
 	}
 
 	API bool load(char *path, char* filename, float& x, float& y, float& z) {
@@ -49,9 +51,11 @@ extern "C" {
 			err = 2;
 			return false;
 		}
-		fscanf_s(file, "%f,%f,%f", &x, &y, &z);
-		fclose(file);
-		return true;
+		else {
+			fscanf_s(file, "%f,%f,%f", &x, &y, &z);
+			fclose(file);
+			return true;
+		}
 	}
 
 	API int getError() { return err; }
